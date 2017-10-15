@@ -70,5 +70,11 @@ module.exports = class extends Generator {
       this.destinationPath(),
       this.props
     );
+
+    this.fs.copyTpl(
+      this.templatePath() + "/**/.*",
+      this.destinationPath(),
+      this.props
+    );
   }
 };
