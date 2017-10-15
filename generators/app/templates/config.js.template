@@ -1,0 +1,9 @@
+module.exports = require("rc")("<%- configPrefix %>", {
+  server: {
+    port: 5000
+  },
+  baseName: "localhost",
+  log: {
+    level: "trace"
+  }
+});
