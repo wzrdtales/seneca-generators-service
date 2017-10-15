@@ -5,6 +5,7 @@ const Promise = require("bluebird");
 const config = require("./config.js");
 const dns = require("dns");
 const os = require("os");
+const Services = require('seneca-service-loader')
 const instanaNodeJSSensor = require("instana-nodejs-sensor");
 
 if (process.env.NODE_ENV === "production") {
@@ -38,7 +39,8 @@ function dnsSeed(seneca, options, bases, next) {
 }
 
 Promise.promisifyAll(seneca);
-require("./lib/index.js")(seneca, config);
+const services = new Services(seneca); 
+services.load();
 
 const initialSenecaConfig = {
   auto: true,

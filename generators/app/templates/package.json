@@ -23,7 +23,8 @@
     "seneca": "^3.4.2",
     "seneca-balance-client": "^0.6.1",
     "seneca-entity": "^2.0.2",
-    "seneca-mesh": "^0.11.0"
+    "seneca-mesh": "^0.11.0",
+    "seneca-service-loader": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^4.5.0",

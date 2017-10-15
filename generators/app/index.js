@@ -76,5 +76,18 @@ module.exports = class extends Generator {
       this.destinationPath(),
       this.props
     );
+
+    this.fs.copyTpl(
+      this.templatePath("config.js.template"),
+      this.destinationPath("config.js"),
+      this.props
+    );
+  }
+
+  install() {
+    this.installDependencies({
+      bower: false,
+      npm: true
+    });
   }
 };
