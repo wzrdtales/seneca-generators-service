@@ -48,6 +48,7 @@ const initialSenecaConfig = {
     <%- pin %>
   ],
   discover: {
+    rediscover: true,
     custom: {
       active: true,
       find: dnsSeed
