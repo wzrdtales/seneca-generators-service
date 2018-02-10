@@ -17,7 +17,7 @@ module.exports = class extends Generator {
         message: "enter your pin name in jsonp syntax",
         default: answers => {
           const name = this.appname.replace(/\sservice$/, "");
-          return `service:${name},command:${answers.command}`;
+          return `service:${name.replace(" ", "-")},command:${answers.command}`;
         }
       }
     ]).then(answers => {
