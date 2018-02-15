@@ -23,7 +23,7 @@
     "seneca": "^3.4.2",
     "seneca-balance-client": "^0.6.1",
     "seneca-entity": "^2.0.2",
-    "seneca-mesh": "github:wzrdtales/seneca-mesh#pre-release",
+    "seneca-mesh-ng": "^0.12.0",
     "seneca-service-loader": "^1.0.0"
   },
   "devDependencies": {

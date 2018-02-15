@@ -67,4 +67,17 @@ const senecaConfig = process.env.rancher
     ...initialSenecaConfig
   };
 
-seneca.use("mesh", senecaConfig);
+const senecaConfig = {
+  ...config.seneca,
+  ...initialSenecaConfig
+};
+
+if (process.env.rancher) {
+  senecaConfig.host = os.networkInterfaces().eth0[0].address;
+}
+
+if (senecaConfig.bases && senecaConfig.bases.indexOf(',')) {
+  senecaConfig.bases = senecaConfig.bases.split(',');
+}
+
+seneca.use("mesh-ng", senecaConfig);
