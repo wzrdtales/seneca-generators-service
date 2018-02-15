@@ -56,17 +56,6 @@ const initialSenecaConfig = {
   }
 };
 
-const senecaConfig = process.env.rancher
-  ? {
-    ...config.seneca,
-    ...initialSenecaConfig,
-    host: os.networkInterfaces().eth0[0].address
-  }
-  : {
-    ...config.seneca,
-    ...initialSenecaConfig
-  };
-
 const senecaConfig = {
   ...config.seneca,
   ...initialSenecaConfig
