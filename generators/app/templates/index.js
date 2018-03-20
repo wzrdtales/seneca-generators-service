@@ -1,16 +1,16 @@
 "use strict";
 
+const instanaNodeJSSensor = require("instana-nodejs-sensor");
+if (process.env.instana) {
+  instanaNodeJSSensor();
+}
 const seneca = require("seneca")();
 const Promise = require("bluebird");
 const config = require("./config.js");
 const dns = require("dns");
 const os = require("os");
 const Services = require('seneca-service-loader')
-const instanaNodeJSSensor = require("instana-nodejs-sensor");
 
-if (process.env.NODE_ENV === "production") {
-  instanaNodeJSSensor();
-}
 
 function dnsSeed(seneca, options, bases, next) {
   dns.lookup(
